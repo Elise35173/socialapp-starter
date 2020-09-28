@@ -1,4 +1,3 @@
-import { FormatSize } from "@material-ui/icons";
 import React from "react";
 import Logo from "../../logo/Logo.jpg";
 import MessageService from "../../services/MessageService";

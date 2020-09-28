@@ -40,6 +40,18 @@ class MessageService {
             .post(this.baseURL + "/likes", requestBody, config)
             .then(response => response.data.like)
     }
+    
+    deleteLike = id => {
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`,
+            }
+        }
+        return this.client
+            .delete(this.baseURL + `/likes/${id}`, config)
+            .then(response => response.data)
+    }
+
     uploadPicture (pictureAsFormData) {
         const endpoint = `${this.baseURL}/users/${this.getUsername()}/picture`
         const config = {

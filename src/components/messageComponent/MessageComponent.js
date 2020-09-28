@@ -16,6 +16,19 @@ class Message extends React.Component {
             })
     }
 
+    removeLike = () => {
+        const messageService = new MessageService()
+        const username = messageService.getUsername()
+        if (this.props.likes.some(like => like.username !== username)) return
+
+        messageService
+            .deleteLike(this.props.id)
+            .then(unlike => {
+                console.log(unlike)
+                this.setState(latestState => ({ likeCount: latestState.likeCount - 1 }))
+            })
+    }
+
     render () {
         return (
             <li className="Message">
@@ -26,6 +39,7 @@ class Message extends React.Component {
                     Likes: {this.state.likeCount}
                 </div>
                 <button onClick={this.handleLike}>Like</button>
+                <button onClick={this.removeLike}>Unlike</button>
             </li>
         )
     }

@@ -40,6 +40,15 @@ class MessageService {
             .post(this.baseURL + "/likes", requestBody, config)
             .then(response => response.data.like)
     }
+    uploadPicture (pictureAsFormData) {
+        const endpoint = `${this.baseURL}/users/${this.getUsername()}/picture`
+        const config = {
+            headers: {
+                Authorization: `Bearer ${this.getToken()}`,
+            }
+        }
+        return this.client.put(endpoint, pictureAsFormData, config)
+    }
 }
 
 export default MessageService;

@@ -23,8 +23,8 @@ class Message extends React.Component {
 
         messageService
             .deleteLike(this.props.id)
-            .then(unlike => {
-                console.log(unlike)
+            .then(like => {
+                console.log(like)
                 this.setState(latestState => ({ likeCount: latestState.likeCount - 1 }))
             })
     }

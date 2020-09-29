@@ -67,6 +67,17 @@ class MessageService {
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   }
+
+  deleteLike(id) {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+      },
+    };
+    return this.client
+      .delete(this.baseURL + `/likes/${id}`, config)
+      .then((response) => response.data);
+  }
 }
 
 export default MessageService;

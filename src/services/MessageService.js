@@ -41,7 +41,7 @@ class MessageService {
             .then(response => response.data.like)
     }
     
-    deleteLike = id => {
+    deleteLike(id) {
         const config = {
             headers: {
                 Authorization: `Bearer ${this.getToken()}`,

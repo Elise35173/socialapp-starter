@@ -21,8 +21,8 @@ class MessageFeed extends React.Component {
                     <h3>Loading...</h3>
                 </div>
             )
-        }
-        return (
+    }
+    return (
             <div className="MessageFeed">
                 <h1>Message Feed</h1>
                 <ul>

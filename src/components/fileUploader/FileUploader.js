@@ -4,59 +4,55 @@ import Logo from "../../logo/Logo.jpg";
 import MessageService from "../../services/MessageService";
 import "./FileUploader.css";
 
-const messageService = new MessageService()
+const messageService = new MessageService();
 
 class FileUploader extends React.Component {
-    state = {
-        imageURL: `https://socialapp-api.herokuapp.com/users/${messageService.getUsername()}/picture`,
-        formData: null,
-    }
+  state = {
+    imageURL: `https://socialapp-api.herokuapp.com/users/${messageService.getUsername()}/picture`,
+    formData: null,
+  };
 
-    setFallbackImage = event => {
-        event.target.src=Logo
-    }
-    
-    createFormData = event => {
-        const file = event.target.files[0]
-        const formData = new FormData()
-        formData.append("picture", file)
+  setFallbackImage = (event) => {
+    event.target.src = Logo;
+  };
 
-        this.setState({ formData })
-    }
+  createFormData = (event) => {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("picture", file);
 
-    handleUpload = () => {
-        messageService.uploadPicture(this.state.formData).then(response => {
-            if (response.data.statusCode === 200) {
-                this.updatePicture()
-            }
-        })
-    }
+    this.setState({ formData });
+  };
 
-    updatePicture() {
-        const timestamp = Date.now()
-        const imageURL = `https://socialapp-api.herokuapp.com/users/${messageService.getUsername()}/picture?t=${timestamp}`
-        this.setState({ imageURL })        
-    }
+  handleUpload = () => {
+    messageService.uploadPicture(this.state.formData).then((response) => {
+      if (response.data.statusCode === 200) {
+        this.updatePicture();
+      }
+    });
+  };
 
-    render() {
-        return (
-            <div className="FileUploader">
-                <input 
-                    name="picture"
-                    type="file" 
-                    onChange={this.createFormData}
-                />
-                <button onClick={this.handleUpload}>Upload</button>
-                <div className="image-preview">
-                    <img
-                        alt="user"
-                        src={this.state.imageURL}
-                        onError={this.setFallbackImage}
-                    />
-                </div>
-            </div>
-        )
-    }
+  updatePicture() {
+    const timestamp = Date.now();
+    const imageURL = `https://socialapp-api.herokuapp.com/users/${messageService.getUsername()}/picture?t=${timestamp}`;
+    this.setState({ imageURL });
+  }
+
+  render() {
+    return (
+      <div className="FileUploader">
+        <input name="picture" type="file" onChange={this.createFormData} />
+        <button onClick={this.handleUpload}>Upload</button>
+        <div className="image-preview">
+          <img
+            alt="user"
+            src={this.state.imageURL}
+            onError={this.setFallbackImage}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default FileUploader;

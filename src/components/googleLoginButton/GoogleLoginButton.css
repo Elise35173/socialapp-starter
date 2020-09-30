@@ -1,0 +1,11 @@
+.hr {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    line-height: 0.1em;
+    margin: 25px 0 30px;
+}
+.hr span {
+    background: white;
+    padding: 0 10px;
+}

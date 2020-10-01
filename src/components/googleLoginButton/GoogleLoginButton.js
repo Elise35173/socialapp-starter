@@ -1,5 +1,10 @@
 import React from "react";
-import { store } from "../../redux"
+import { store } from "../../redux";
+import {
+    Button,
+  } from "@material-ui/core";
+import "./GoogleLoginButton.css";
+
 
 class GoogleLoginButton extends React.Component {
     handleGoogle = () => {
@@ -25,7 +30,7 @@ class GoogleLoginButton extends React.Component {
         return (
             <>
                 <h5 className="hr"><span>OR</span></h5>
-                <button onClick={this.handleGoogle}>Sign in with Google</button>
+                <Button fullWidth variant="contained" color="primary" onClick={this.handleGoogle}>Sign in with Google</Button>
             </>
         )
     }

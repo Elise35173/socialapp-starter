@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Avatar,
-  Box,
   Button,
   Checkbox,
   Container,
@@ -16,19 +15,7 @@ import Spinner from "react-spinkit";
 import { styled } from "@material-ui/core/styles";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { withAsyncAction } from "../../redux/HOCs";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="#">
-        <strong>Yowl</strong>
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import GoogleLoginButton from "../googleLoginButton/GoogleLoginButton"
 
 const YowlAvatar = styled(Avatar)({
   margin: "1em",
@@ -97,14 +84,14 @@ class LoginForm extends React.Component {
                   {"New User?"}
                 </Link>
               </Grid>
+              <Grid item>
+                <GoogleLoginButton />
+              </Grid>
             </Grid>
           </form>
           {loading && <Spinner name="circle" color="blue" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
         </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
       </Container>
     );
   }

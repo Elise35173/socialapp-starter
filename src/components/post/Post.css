@@ -1,0 +1,42 @@
+
+
+.postHole{
+    position: relative;
+    width: 750px;
+   padding: 2%;
+   margin-left: 300px;
+   margin-top: 1px;
+   border: none;
+   border-radius: 1rem;
+   text-decoration: none;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: larger;
+   color:#1685b5;
+   
+}
+
+.postHole::placeholder{
+    font-size: larger;
+   color:#0b465f;
+}
+.postBtn{
+
+    position: relative;
+    width: 805px;
+    background-color:#1ca7e2;;
+    border-radius: 1rem;
+    padding: 1%;
+    border: none;
+    margin: 5px 0 5px 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+  
+    color: white;
+
+   
+}
+
+.postBtn:hover{
+    background-color: #e4ab24;
+}

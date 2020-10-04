@@ -1,6 +1,7 @@
 import React from "react";
 import MessageService from "../services/MessageService";
 import Message from "../components/messageComponent/MessageComponent";
+import "./MessageFeed.css";
 
 class MessageFeed extends React.Component {
   state = {
@@ -22,10 +23,11 @@ class MessageFeed extends React.Component {
     }
     return (
       <div className="MessageFeed">
-        <h1>Message Feed</h1>
+        
         <ul>
           {this.state.messages.map((msg) => (
             <Message key={msg.id} {...msg} />
+            
           ))}
         </ul>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import MessageService from "../../services/MessageService";
-
+import "./Post.css";
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -18,14 +18,14 @@ class Post extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleMessage}>
-        <input
+      <form onChange={this.handleMessage}>
+        <input className="postHole"
           name="PostBox"
-          placeholder="Add a comment..."
+          placeholder="Got something to say? ...."
           value={this.state.value}
           onChange={(e) => this.setState({ value: e.target.value })}
         />
-        <button> Post</button>
+        <button className="postBtn"> Post</button>
       </form>
     );
   }

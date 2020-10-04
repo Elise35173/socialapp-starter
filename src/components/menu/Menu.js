@@ -17,7 +17,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <h1>Yowl</h1>
+        <h1>Yowl!</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <MenuIcons active Icon={HomeIcon} text="Home" path="/" />
@@ -30,8 +30,8 @@ class Menu extends React.Component {
             <div className="logoutButton">
               <Button
                 path="/"
-                variant="contained"
-                color="secondary"
+                color="primary"
+                
                 onClick={this.handleLogout}
               >
                 Logout

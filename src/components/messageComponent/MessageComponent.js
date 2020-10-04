@@ -4,7 +4,7 @@ import "./Message.css";
 import {Button} from "@material-ui/core"
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
-
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
 
 
@@ -62,7 +62,7 @@ class Message extends React.Component {
     let Delete = "";
     let userData = JSON.parse(localStorage.getItem("login"));
     if (userData.result.username === this.props.username) {
-      Delete = <button className="delete"onClick={this.deleteMessage}>Delete Message</button>;
+      Delete = <button className="delete"onClick={this.deleteMessage}><DeleteOutlineOutlinedIcon/></button>;
     }
     if (this.state.deleted === true) {
       return <div></div>;

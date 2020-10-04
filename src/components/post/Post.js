@@ -16,16 +16,20 @@ class Post extends React.Component {
     this.client.postMessage(message);
   };
 
-  render() {
+  handleChange = (e) => this.setState({ value: e.target.value })
+
+  render() {    
     return (
-      <form  onChange={this.handleMessage}>
+      <form >
         <input className="postHole"
           name="PostBox"
           placeholder="Got something to say? ...."
           value={this.state.value}
-          onChange={(e) => this.setState({ value: e.target.value })}
+          onChange={this.handleChange}
+
+          
         />
-        <button className="postBtn"> Post</button>
+        <button   onClick={this.handleMessage} className="postBtn"> Post</button>
       </form>
     );
   }

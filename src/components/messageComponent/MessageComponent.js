@@ -1,5 +1,12 @@
 import React from "react";
 import MessageService from "../../services/MessageService";
+import "./Message.css";
+import {Button} from "@material-ui/core"
+import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
+import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+
+
 
 class Message extends React.Component {
   constructor(props) {
@@ -55,7 +62,7 @@ class Message extends React.Component {
     let Delete = "";
     let userData = JSON.parse(localStorage.getItem("login"));
     if (userData.result.username === this.props.username) {
-      Delete = <button onClick={this.deleteMessage}>Delete Message</button>;
+      Delete = <button className="delete"onClick={this.deleteMessage}><DeleteOutlineOutlinedIcon/></button>;
     }
     if (this.state.deleted === true) {
       return <div></div>;
@@ -66,8 +73,10 @@ class Message extends React.Component {
         <br />
         {this.props.text}
         <div className="like-count">Likes: {this.state.likeCount}</div>
-        <button onClick={this.handleLike}>Like</button>
-        <button onClick={this.removeLike}>Unlike</button>
+        {/* <Button className="like"onClick={this.handleLike}>Like</Button> */}
+        <Button onClick={this.handleLike}><ThumbUpOutlinedIcon/></Button>
+        <Button className="unlike"onClick={this.removeLike}><ThumbDownOutlinedIcon/></Button>
+
         {Delete}
       </li>
     );

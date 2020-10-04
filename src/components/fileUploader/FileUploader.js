@@ -42,7 +42,7 @@ class FileUploader extends React.Component {
     return (
       <div className="FileUploader">
         <input name="picture" type="file" onChange={this.createFormData} />
-        <button onClick={this.handleUpload}>Upload</button>
+        <button className="uploaderBtn" onClick={this.handleUpload}>Upload</button>
         <div className="image-preview">
           <img
             alt="user"

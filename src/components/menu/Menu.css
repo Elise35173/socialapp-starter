@@ -1,20 +1,64 @@
 .Menu {
-  background-color: lightskyblue;
+  position: inherit;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  width:100%;
+ 
+
+  background-color: #1ca7e2;
+  justify-content: space-evenly;
+  
 }
 
 #menu-links {
   display: flex;
-  padding-left: 1em;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: fit-content;
+  color: white;
+
 }
 
 #menu-links a {
-  padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 900;
+  padding-right: 1.5em;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
+}
+
+
+h1{
+  position: inherit;
+  margin-left: -305px;
+  margin-bottom: -5px;
+  margin-top: -3px;
+ 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+ font-size: 50px;
+
+}
+ 
+
+
+
+
+.logoutButton{
+  position: absolute;
+  margin:5px -350px 1px;
+
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ background-color:#1ca7e2;
+ color: white;
+ font-size: 12px;
+}
+
+.logoutButton:hover{
+  background-color:#a4dbf3;
+  border-radius: 1rem;
+  
+  
+  
 }

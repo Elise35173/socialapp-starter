@@ -18,7 +18,7 @@ class Post extends React.Component {
 
   render() {
     return (
-      <form onChange={this.handleMessage}>
+      <form  onChange={this.handleMessage}>
         <input className="postHole"
           name="PostBox"
           placeholder="Got something to say? ...."

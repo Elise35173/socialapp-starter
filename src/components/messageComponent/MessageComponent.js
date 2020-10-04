@@ -73,9 +73,9 @@ class Message extends React.Component {
         <br />
         {this.props.text}
         <div className="like-count">Likes: {this.state.likeCount}</div>
-        {/* <Button className="like"onClick={this.handleLike}>Like</Button>
-        <Button className="unlike"onClick={this.removeLike}>Unlike</Button> */}
+        {/* <Button className="like"onClick={this.handleLike}>Like</Button> */}
         <Button onClick={this.handleLike}><ThumbUpOutlinedIcon/></Button>
+        <Button className="unlike"onClick={this.removeLike}><ThumbDownOutlinedIcon/></Button>
 
         {Delete}
       </li>

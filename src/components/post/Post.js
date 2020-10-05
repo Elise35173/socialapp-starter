@@ -26,10 +26,8 @@ class Post extends React.Component {
           placeholder="Got something to say? ...."
           value={this.state.value}
           onChange={this.handleChange}
-
-          
         />
-        <button   onClick={this.handleMessage} className="postBtn"> Post</button>
+        <button onClick={this.handleMessage} className="postBtn"> Post</button>
       </form>
     );
   }

@@ -4,12 +4,20 @@ import Message from "../components/messageComponent/MessageComponent";
 import "./MessageFeed.css";
 
 class MessageFeed extends React.Component {
+  intervalID;
   state = {
     messages: [],
   };
   componentDidMount() {
+    this.getData()
+  }
+  componentWillUnmount() {
+    clearTimeout(this.intervalID);
+  }
+  getData = () => {
     new MessageService().getRecentMessages().then((messages) => {
       this.setState({ messages });
+      this.intervalID = setTimeout(this.getData.bind(this), 5000);
     });
   }
   render() {
@@ -27,7 +35,6 @@ class MessageFeed extends React.Component {
         <ul>
           {this.state.messages.map((msg) => (
             <Message key={msg.id} {...msg} />
-            
           ))}
         </ul>
       </div>
